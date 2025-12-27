@@ -1,4 +1,4 @@
-package com.demo.StockMaster;
+package com.brunogonsales.StockMaster;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

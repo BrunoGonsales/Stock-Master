@@ -1,4 +1,4 @@
-package com.demo.StockMaster;
+package com.brunogonsales.StockMaster;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
