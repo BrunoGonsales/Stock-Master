@@ -8,10 +8,10 @@
 		<version>3.5.9</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.demo</groupId>
-	<artifactId>StockMaster</artifactId>
+	<groupId>com.brunogonsales</groupId>
+	<artifactId>InventoryFlow</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>StockMaster</name>
+	<name>InventoryFlow</name>
 	<description>Sistema para gerir estoque</description>
 	<url/>
 	<licenses>
@@ -52,10 +52,11 @@
 			<scope>test</scope>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/postgresql/postgresql -->
+		<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
 		<dependency>
-			<groupId>postgresql</groupId>
+			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
-			<version>9.1-901-1.jdbc4</version>
+			<version>42.7.8</version>
 		</dependency>
 	</dependencies>
 

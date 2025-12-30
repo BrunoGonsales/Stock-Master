@@ -1,13 +1,13 @@
-package com.brunogonsales.StockMaster;
+package com.brunogonsales.InventoryFlow;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class StockMasterApplication {
+public class InventoryFlowApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(StockMasterApplication.class, args);
+		SpringApplication.run(InventoryFlowApplication.class, args);
 	}
 
 }

@@ -1,4 +1,4 @@
-package com.brunogonsales.StockMaster.model;
+package com.brunogonsales.InventoryFlow.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -31,7 +31,7 @@ public class Products {
     private BigDecimal lastPurchasePrice;
 
     @ManyToOne
-    @JoinColumn(name = "ground_id")
+    @JoinColumn(name = "group_id")
     private ProductsGroup groupId;
 
 }
