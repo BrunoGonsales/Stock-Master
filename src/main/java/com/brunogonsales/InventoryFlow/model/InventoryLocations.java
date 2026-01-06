@@ -22,5 +22,5 @@ public class InventoryLocations {
     private String name;
 
     @OneToMany(mappedBy = "location",cascade = CascadeType.ALL)
-    private List<InventoryLocations> stocks;
+    private List<InventoryStock> stocks;
 }

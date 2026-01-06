@@ -3,6 +3,8 @@ package com.brunogonsales.InventoryFlow.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.math.BigDecimal;
+
 @Entity
 @Table(name = "inventory_stock")
 @Getter
@@ -25,7 +27,7 @@ public class InventoryStock {
     private InventoryLocations location;
 
     @Column(precision = 15, scale = 3)
-    private double quantity;
+    private BigDecimal quantity;
 
 
 }
