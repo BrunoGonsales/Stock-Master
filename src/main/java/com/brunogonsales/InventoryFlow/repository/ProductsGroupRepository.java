@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface ProductsGroupRepository extends JpaRepository<ProductsGroup,Integer> {
+public interface ProductsGroupRepository extends JpaRepository<ProductsGroup,Long> {
     Optional<ProductsGroup> findById(Integer code);
 }
