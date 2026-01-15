@@ -12,7 +12,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class ProductsGroup {
+public class ProductGroup {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
@@ -25,5 +25,5 @@ public class ProductsGroup {
     private String description;
 
     @OneToMany(mappedBy = "groupId")
-    private List<Products> products;
+    private List<Product> product;
 }

@@ -1,7 +1,7 @@
 package com.brunogonsales.InventoryFlow.service;
 
-import com.brunogonsales.InventoryFlow.model.Products;
-import com.brunogonsales.InventoryFlow.repository.ProductsRepository;
+import com.brunogonsales.InventoryFlow.model.Product;
+import com.brunogonsales.InventoryFlow.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,17 +11,17 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class ProductService {
-    private final ProductsRepository productsRepository;
+    private final ProductRepository productRepository;
 
-    public Products save (Products products) {
-        if (productsRepository.existsById(products.getId())){
+    public Product save (Product product) {
+        if (productRepository.existsById(product.getId())){
             throw new RuntimeException("Já existe um produto cadastrado com esse ID");
         }
-        return productsRepository.save(products);
+        return productRepository.save(product);
     }
 
     @Transactional(readOnly = true)
-    public List<Products> findAll(){
-        return productsRepository.findAll();
+    public List<Product> findAll(){
+        return productRepository.findAll();
     }
 }

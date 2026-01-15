@@ -1,9 +1,9 @@
 package com.brunogonsales.InventoryFlow.repository;
 
-import com.brunogonsales.InventoryFlow.model.InventoryLocations;
+import com.brunogonsales.InventoryFlow.model.InventoryLocation;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface InventoryLocationsRepository extends JpaRepository<InventoryLocations,Long> {
+public interface InventoryLocationRepository extends JpaRepository<InventoryLocation,Long> {
 }

@@ -20,11 +20,11 @@ public class InventoryStock {
 
     @ManyToOne
     @JoinColumn(name = "product_id")
-    private Products products;
+    private Product product;
 
     @ManyToOne
     @JoinColumn(name = "location_id")
-    private InventoryLocations location;
+    private InventoryLocation location;
 
     @Column(precision = 15, scale = 3)
     private BigDecimal quantity;

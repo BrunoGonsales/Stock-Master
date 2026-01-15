@@ -1,12 +1,12 @@
 package com.brunogonsales.InventoryFlow.repository;
 
-import com.brunogonsales.InventoryFlow.model.Products;
+import com.brunogonsales.InventoryFlow.model.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-public interface ProductsRepository extends JpaRepository<Products,Long> {
-    List<Products> findByNameContainingIgnoreCase(String name);
+public interface ProductRepository extends JpaRepository<Product,Long> {
+    List<Product> findByNameContainingIgnoreCase(String name);
 }

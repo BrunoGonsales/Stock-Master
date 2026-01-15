@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class Products {
+public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,6 +30,6 @@ public class Products {
 
     @ManyToOne
     @JoinColumn(name = "group_id")
-    private ProductsGroup groupId;
+    private ProductGroup groupId;
 
 }

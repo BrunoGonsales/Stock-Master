@@ -1,8 +1,8 @@
 package com.brunogonsales.InventoryFlow.service;
 
-import com.brunogonsales.InventoryFlow.model.InventoryLocations;
+import com.brunogonsales.InventoryFlow.model.InventoryLocation;
 import com.brunogonsales.InventoryFlow.model.InventoryStock;
-import com.brunogonsales.InventoryFlow.model.Products;
+import com.brunogonsales.InventoryFlow.model.Product;
 import com.brunogonsales.InventoryFlow.repository.InventoryStockRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -17,7 +17,7 @@ public class InventoryStockService {
     private final InventoryStockRepository stockRepository;
 
     @Transactional
-    public InventoryStock updateStock(Products product, InventoryLocations location, BigDecimal quantity){
+    public InventoryStock updateStock(Product product, InventoryLocation location, BigDecimal quantity){
         // 1. Tenta encontrar se já existe esse produto nesse local
         Optional<InventoryStock> existingStock = stockRepository.findByProductAndLocation(product, location);
 
@@ -29,7 +29,7 @@ public class InventoryStockService {
         } else {
             // 3. Se não existe, cria um registro novo
             InventoryStock newStock = new InventoryStock();
-            newStock.setProducts(product);
+            newStock.setProduct(product);
             newStock.setLocation(location);
             newStock.setQuantity(quantity);
             return stockRepository.save(newStock);

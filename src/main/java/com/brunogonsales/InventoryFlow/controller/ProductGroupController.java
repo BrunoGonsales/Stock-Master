@@ -1,7 +1,7 @@
 package com.brunogonsales.InventoryFlow.controller;
 
-import com.brunogonsales.InventoryFlow.model.ProductsGroup;
-import com.brunogonsales.InventoryFlow.service.ProductsGroupService;
+import com.brunogonsales.InventoryFlow.model.ProductGroup;
+import com.brunogonsales.InventoryFlow.service.ProductGroupService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,20 +13,24 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ProductGroupController {
 
-    private final ProductsGroupService groupService;
+    private final ProductGroupService groupService;
 
-    public ResponseEntity<ProductsGroup> create(@RequestBody ProductsGroup group){
-        ProductsGroup savedGroup = groupService.save(group);
+    //Cria o método POST
+    @PostMapping
+    public ResponseEntity<ProductGroup> create(@RequestBody ProductGroup group){
+        ProductGroup savedGroup = groupService.save(group);
         return ResponseEntity.ok(savedGroup);
     }
 
+    //Cria o método Listar Todos GET
     @GetMapping
-    public ResponseEntity<List<ProductsGroup>> getAll() {
+    public ResponseEntity<List<ProductGroup>> getAll() {
         return ResponseEntity.ok(groupService.findAll());
     }
 
+    //Cria o método Busca por ID GET
     @GetMapping("/{id}")
-    public ResponseEntity<ProductsGroup> getById(@PathVariable Long id) {
+    public ResponseEntity<ProductGroup> getById(@PathVariable Long id) {
         return ResponseEntity.ok(groupService.findById(id));
     }
 }
