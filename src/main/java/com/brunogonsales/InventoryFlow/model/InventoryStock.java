@@ -1,5 +1,6 @@
 package com.brunogonsales.InventoryFlow.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -20,10 +21,12 @@ public class InventoryStock {
 
     @ManyToOne
     @JoinColumn(name = "product_id")
+    @JsonIgnoreProperties("groupsId")
     private Product product;
 
     @ManyToOne
     @JoinColumn(name = "location_id")
+    @JsonIgnoreProperties("stock")
     private InventoryLocation location;
 
     @Column(precision = 15, scale = 3)

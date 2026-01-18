@@ -35,4 +35,11 @@ public class InventoryStockService {
             return stockRepository.save(newStock);
         }
     }
+
+    @Transactional(readOnly = true)
+    public BigDecimal getStockBalance(Product product, InventoryLocation location){
+        return stockRepository.findByProductAndLocation(product,location)
+                .map(InventoryStock::getQuantity)
+                .orElse(BigDecimal.ZERO);
+    }
 }

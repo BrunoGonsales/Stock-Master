@@ -13,9 +13,10 @@ import java.util.List;
 public class ProductService {
     private final ProductRepository productRepository;
 
+    @Transactional
     public Product save (Product product) {
-        if (productRepository.existsById(product.getId())){
-            throw new RuntimeException("Já existe um produto cadastrado com esse ID");
+        if (product.getDescription() == null || product.getDescription().isEmpty()){
+            throw new IllegalArgumentException("A descrição do produto não pode estar vazia");
         }
         return productRepository.save(product);
     }
@@ -23,5 +24,9 @@ public class ProductService {
     @Transactional(readOnly = true)
     public List<Product> findAll(){
         return productRepository.findAll();
+    }
+
+    public Product findById(Long id){
+        return productRepository.findById(id).orElseThrow(() -> new RuntimeException("Produto" + id + "não encontrado!"));
     }
 }

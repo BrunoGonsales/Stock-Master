@@ -4,6 +4,7 @@ import com.brunogonsales.InventoryFlow.model.ProductGroup;
 import com.brunogonsales.InventoryFlow.repository.ProductGroupRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -13,6 +14,7 @@ public class ProductGroupService {
 
     private final ProductGroupRepository groupRepository;
 
+    @Transactional
     public ProductGroup save (ProductGroup group) {
         if (group.getDescription() == null || group.getDescription().isEmpty()){
             throw new IllegalArgumentException("A descrição do grupo não pode estar vazia");
